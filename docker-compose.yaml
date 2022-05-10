@@ -14,26 +14,26 @@ services:
       - db_server
       - db_admin
     networks:
-      - restaurantsnetwork
+      - thecracknetwork
 
   db_server:
     image: mysql
-    container_name: 'Restaurants-db'
+    container_name: 'thecrack-db'
     environment:
       MYSQL_USER: aperellop
       MYSQL_PASSWORD: pwd
       MYSQL_ROOT_PASSWORD: pwdroot
-      MYSQL_DATABASE: RestaurantsDB
+      MYSQL_DATABASE: thecrackDB
     volumes:
       - ./dump:/docker-entrypoint-initdb.d
       - ./conf:/etc/mysql/conf.d
       - persistent:/var/lib/mysql
     networks:
-      - restaurantsnetwork
+      - thecracknetwork
 
   db_admin:
     image: phpmyadmin/phpmyadmin
-    container_name: 'Restaurants-db_admin'
+    container_name: 'thecrack-db_admin'
     links:
      - db_server:db
     ports:
@@ -43,6 +43,6 @@ services:
       MYSQL_PASSWORD: pwd
       MYSQL_ROOT_PASSWORD: pwd
     networks:
-      - restaurantsnetwork
+      - thecracknetwork
 volumes:
   persistent:
