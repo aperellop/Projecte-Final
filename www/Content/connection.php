@@ -3,7 +3,7 @@
         $servername = "db_server";
         $username = "aperellop";
         $password = "pwd";
-        $database = "RestaurantsDB";
+        $database = "thecrackDB";
 
         // Create connection
         $db = new mysqli($servername, $username, $password, $database);

@@ -50,7 +50,7 @@
                     $username = $_POST['username'];
                     $password = $_POST['password'];
 
-                    $sql = ('SELECT * FROM User WHERE USERNAME="'.$username.'";');
+                    $sql = ('SELECT * FROM Users WHERE USERNAME="'.$username.'";');
 
                     //Querying the database for a matching username and veryfying passphrase.
                     if($userTable = $database->query($sql)) {
