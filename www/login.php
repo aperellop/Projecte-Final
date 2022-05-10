@@ -67,8 +67,8 @@
                             $_SESSION['email'] = $user->email;
                             
                             print('
-                                <p class="text-light">Session started</p>
-                                <a href="index.php">Back to Home page</a>
+                                <p class="text-light">Sesion iniciada</p>
+                                <a href="index.php">Vuelve a la página Home</a>
                             ');
 
                             }  else {

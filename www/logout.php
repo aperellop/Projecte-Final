@@ -20,8 +20,8 @@
             session_destroy();
         ?>
 
-        <p class="text-light">Session ended</p>
-        <a href="index.php">Back to Home page</a>
+        <p class="text-light">Sesion Finalizada</p>
+        <a href="index.php">Vuelve a la página Home</a>
 
         <?php
             footer();
