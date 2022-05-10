@@ -1,7 +1,7 @@
 version: "3.3"
 
 networks:
-  restaurantsnetwork:
+  thecracknetwork:
 
 services:
   www:
@@ -18,12 +18,12 @@ services:
 
   db_server:
     image: mysql
-    container_name: 'thecrack-db'
+    container_name: 'TheCrack-db'
     environment:
       MYSQL_USER: aperellop
       MYSQL_PASSWORD: pwd
       MYSQL_ROOT_PASSWORD: pwdroot
-      MYSQL_DATABASE: thecrackDB
+      MYSQL_DATABASE: TheCrackDB
     volumes:
       - ./dump:/docker-entrypoint-initdb.d
       - ./conf:/etc/mysql/conf.d
@@ -33,7 +33,7 @@ services:
 
   db_admin:
     image: phpmyadmin/phpmyadmin
-    container_name: 'thecrack-db_admin'
+    container_name: 'TheCrack-db_admin'
     links:
      - db_server:db
     ports:
