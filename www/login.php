@@ -68,7 +68,7 @@
                             
                             print('
                                 <p class="text-light">Session started</p>
-                                <a href="index.php">Back to Restaurants page</a>
+                                <a href="index.php">Back to Home page</a>
                             ');
 
                             }  else {
