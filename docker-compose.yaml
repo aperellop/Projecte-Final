@@ -1,0 +1,48 @@
+version: "3.3"
+
+networks:
+  restaurantsnetwork:
+
+services:
+  www:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./www:/var/www/html
+    links:
+      - db_server
+      - db_admin
+    networks:
+      - restaurantsnetwork
+
+  db_server:
+    image: mysql
+    container_name: 'Restaurants-db'
+    environment:
+      MYSQL_USER: aperellop
+      MYSQL_PASSWORD: pwd
+      MYSQL_ROOT_PASSWORD: pwdroot
+      MYSQL_DATABASE: RestaurantsDB
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
+      - ./conf:/etc/mysql/conf.d
+      - persistent:/var/lib/mysql
+    networks:
+      - restaurantsnetwork
+
+  db_admin:
+    image: phpmyadmin/phpmyadmin
+    container_name: 'Restaurants-db_admin'
+    links:
+     - db_server:db
+    ports:
+     - 8080:80
+    environment:
+      MYSQL_USER: aperellop
+      MYSQL_PASSWORD: pwd
+      MYSQL_ROOT_PASSWORD: pwd
+    networks:
+      - restaurantsnetwork
+volumes:
+  persistent:
