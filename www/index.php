@@ -29,7 +29,7 @@
     <body class="bg-dark">
         <?php
             include './Structure/navbar.php';
-            include './Content/getRestaurants.php';
+            include './Content/getSpots.php';
             include './Structure/footer.php';
         ?>
 
@@ -38,13 +38,10 @@
         ?>
 
         <?php
-            // Modify the index.php page to show the logged user in the webpage, using sessions:
-                        //  ●	If it exists a logged user, you have to show his username and his email, and a button to log out
-                        //  ●	If it doesn’t exist a logged user, you have to show a log in button
-
             if (isset($_SESSION['username'])){
                 print('
-                    <p class="h4 mx-lg-5 text-light" >Hello, '.$_SESSION['username'].'</p>
+                    <p class="h4 mx-lg-5 text-light" >Hello, '.$_SESSION['name'].'</p>
+                    <img src="'.$_SESSION['photography'].'" width="200">
                     <p class="mx-lg-5 text-light" >'.$_SESSION['email'].'</p>
 
                     <a class="mx-lg-5" href="logout.php"><button type="button">Log out</button></a>
@@ -65,33 +62,8 @@
         </div>
 
         <?php
-            // Modify the index.php page to show the logged user in the webpage, using sessions:
-                        //  ●	If it exists a logged user, you have to show his username and his email, and a button to log out
-                        //  ●	If it doesn’t exist a logged user, you have to show a log in button
-
-            // if($session){
-            //     print('
-            //     <div class="d-flex mx-lg-5 text-center">
-            //     <a href="logout.php"><button type="button">Log out</button></a>
-            //     </div>
-            //     ');
-            // }else{
-            //     print('
-            //         <div>
-            //             <p>'.$username.'</p>
-            //             <p>'.$email.'</p>
-            //         </div>
-
-            //         <div class="d-flex  mx-lg-5 text-center">
-            //             <a href="login.php"><button type="button">Log in</button></a>
-            //         </div>
-            //     ');
-            // }
-        ?>
-
-        <?php
             // $connectDB = connectDB();
-            $restaurants = getRestaurants();
+            $spots = getSpots();
 
             // Loop where we iterate as many times as we have restaurants, printing all the info of these inside bootstrap cards
             for($i=0;$i<5;$i++){
@@ -100,14 +72,13 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-5">
-                                    <a href="/restaurantsdb.php?id='.$i.'"><p class="h3 card-title">'.$restaurants[$i]->name.'</p></a>
-                                    <p class="card-text">'.$restaurants[$i]->description.'</p>
-                                    <p class="card-text">'.$restaurants[$i]->address.'</p>
-                                    <p class="card-text">'.$restaurants[$i]->phonenumber.'</p>
+                                    <a href="/restaurantsdb.php?id='.$i.'"><p class="h3 card-title">'.$spots[$i]->name.'</p></a>
+                                    <p class="card-text">'.$spots[$i]->description.'</p>
+                                    <p class="card-text">'.$spots[$i]->location.'</p>
                                 </div>
 
                                 <div class="col-sm-5">
-                                    <img src="'.$restaurants[$i]->photography.'" width="200">
+                                    <img src="'.$spots[$i]->photography.'" width="200">
                                 </div>
                             </div>
                         </div>

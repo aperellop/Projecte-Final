@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>The crack - Login</title>
+        <title>The Crack - Login</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
 
@@ -65,6 +65,7 @@
                             $_SESSION['username'] = $user->username;
                             $_SESSION['name'] = $user->name;
                             $_SESSION['email'] = $user->email;
+                            $_SESSION['photography'] = $user->photography;
                             
                             print('
                                 <p class="text-light">Sesion iniciada</p>
