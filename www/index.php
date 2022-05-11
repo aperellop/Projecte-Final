@@ -8,15 +8,61 @@
         <meta charset="UTF-8">
         <title>The Crack</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <style>
+            .image-fondo {
+                background-image: url("./Resources/Photographies/Structure/serra-de-tramuntana-mallorca.jpg");
+                background-size: cover;
+                
+            }
+            .cabecera{
+                height: 400px;;
+                width: 1500px;
+                font-size: 150px;
+            }
+            .body{
+                text-align:center;
+                margin:0 auto;
+            }
+        </style>
     </head>
 
     <body class="bg-dark">
-        <p class="h1 text-center text-light">The Crack</p>
-
         <?php
+            include './Structure/navbar.php';
             include './Content/getRestaurants.php';
             include './Structure/footer.php';
         ?>
+
+        <?php
+            navbar();
+        ?>
+
+        <?php
+            // Modify the index.php page to show the logged user in the webpage, using sessions:
+                        //  ●	If it exists a logged user, you have to show his username and his email, and a button to log out
+                        //  ●	If it doesn’t exist a logged user, you have to show a log in button
+
+            if (isset($_SESSION['username'])){
+                print('
+                    <p class="h4 mx-lg-5 text-light" >Hello, '.$_SESSION['username'].'</p>
+                    <p class="mx-lg-5 text-light" >'.$_SESSION['email'].'</p>
+
+                    <a class="mx-lg-5" href="logout.php"><button type="button">Log out</button></a>
+                ');
+            } else {
+                print('
+                    <p class="h5 mx-lg-5 text-light" >Hello, guest</p>
+
+                    <a class="mx-lg-5" href="login.php"><button type="button">Log in</button></a>
+                ');
+            }
+        ?>
+
+        <div class="image-fondo cabecera body">
+            <p class="text-center text-light">The Crack</p>
+            <p class="h4 text-center text-light">Te damos la bienvenida a la plataforma colaborativa</p>
+            <p class="h4 text-center text-light">de escalada en roca y búlder de Mallorca</p>
+        </div>
 
         <?php
             // Modify the index.php page to show the logged user in the webpage, using sessions:
@@ -41,27 +87,6 @@
             //         </div>
             //     ');
             // }
-        ?>
-
-        <?php
-            // Modify the index.php page to show the logged user in the webpage, using sessions:
-                        //  ●	If it exists a logged user, you have to show his username and his email, and a button to log out
-                        //  ●	If it doesn’t exist a logged user, you have to show a log in button
-
-            if (isset($_SESSION['username'])){
-                print('
-                    <p class="h4 mx-lg-5 text-light" >Hello, '.$_SESSION['username'].'</p>
-                    <p class="mx-lg-5 text-light" >'.$_SESSION['email'].'</p>
-
-                    <a class="mx-lg-5" href="logout.php"><button type="button">Log out</button></a>
-                ');
-            } else {
-                print('
-                    <p class="h5 mx-lg-5 text-light" >Hello, guest</p>
-
-                    <a class="mx-lg-5" href="login.php"><button type="button">Log in</button></a>
-                ');
-            }
         ?>
 
         <?php
