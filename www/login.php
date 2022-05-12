@@ -8,12 +8,23 @@
         <meta charset="UTF-8">
         <title>The Crack - Login</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <style>
+            .body{
+                text-align:center;
+                margin:0 auto;
+            }
+        </style>
     </head>
 
     <body class="bg-dark">
         <?php
+            include_once 'Structure/navbar.php';
             include_once 'Structure/footer.php';
             include_once 'Content/connection.php';
+        ?>
+
+        <?php
+            navbar();
         ?>
 
         <?php
@@ -68,8 +79,10 @@
                             $_SESSION['photography'] = $user->photography;
                             
                             print('
-                                <p class="text-light">Sesion iniciada</p>
-                                <a href="index.php">Vuelve a la página Home</a>
+                                <div class="body">
+                                    <p class="text-light">Sesión iniciada</p>
+                                    <a href="index.php">Vuelve a la página Home</a>
+                                </div>
                             ');
 
                             }  else {

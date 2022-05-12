@@ -23,6 +23,9 @@
                 text-align:center;
                 margin:0 auto;
             }
+            .circular--square {
+                border-radius: 50%;
+            }
         </style>
     </head>
 
@@ -40,11 +43,22 @@
         <?php
             if (isset($_SESSION['username'])){
                 print('
-                    <p class="h4 mx-lg-5 text-light" >Hello, '.$_SESSION['name'].'</p>
-                    <img src="'.$_SESSION['photography'].'" width="200">
-                    <p class="mx-lg-5 text-light" >'.$_SESSION['email'].'</p>
 
-                    <a class="mx-lg-5" href="logout.php"><button type="button">Log out</button></a>
+                </br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-1">
+                            <img class="circular--square" src="'.$_SESSION['photography'].'" width="100" height="100">
+                        </div>
+                        <div class="col p-5 text-left">
+                            <p class="h4 mx-lg-5 text-light" >Hello, '.$_SESSION['name'].'</p>
+                            <p class="mx-lg-5 text-light" >'.$_SESSION['email'].'</p>
+                        </div>
+                        <div class="col-1">
+                            <a class="mx-lg-5" href="logout.php"><button type="button">Log out</button></a>
+                        </div>
+                    </div>
+                </div>
                 ');
             } else {
                 print('
