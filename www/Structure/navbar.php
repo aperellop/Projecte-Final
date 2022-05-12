@@ -1,7 +1,7 @@
 <?php
     function navbar(){
         print('
-            <nav class="bg-light navbar navbar-default container p-5 pb-0 mb-0">
+            <nav class="navbar navbar-default container ">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <div class="container">
@@ -12,8 +12,8 @@
                                             <a title="Logo" href="index.php">   <img class="circular--square" src="./../Resources/Photographies/Structure/logo.jpg" alt="Logo" width="100" height="100" /> </a>
                                         </div>
                                         <div class="col-8 p-5 text-center">
-                                            <p style="line-height: 50%" class="h5 text-center">the</p>
-                                            <p style="line-height: 50%" class="h1 text-center">Crack</p>
+                                            <p style="line-height: 50%" class="h5 text-center text-light">the</p>
+                                            <p style="line-height: 50%" class="h1 text-center text-light">Crack</p>
                                         </div>
                                     </div>
                                 </div>

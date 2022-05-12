@@ -16,7 +16,7 @@
             }
             .cabecera{
                 height: 400px;;
-                width: 1500px;
+                width: 1320px;
                 font-size: 150px;
             }
             .body{
@@ -27,19 +27,21 @@
                 border-radius: 50%;
             }
         </style>
-    </head>
 
-    <body class="bg-dark">
         <?php
             include './Structure/navbar.php';
             include './Content/getSpots.php';
             include './Structure/footer.php';
         ?>
+    </head>
 
+    <header>
         <?php
             navbar();
         ?>
+    </header>
 
+    <body class="bg-dark">
         <?php
             if (isset($_SESSION['username'])){
                 print('
@@ -47,9 +49,6 @@
                 </br>
                 <div class="container">
                     <div class="row">
-                        <div class="col-1">
-                            <img class="circular--square" src="'.$_SESSION['photography'].'" width="100" height="100">
-                        </div>
                         <div class="col p-5 text-left">
                             <p class="h4 mx-lg-5 text-light" >Hello, '.$_SESSION['name'].'</p>
                             <p class="mx-lg-5 text-light" >'.$_SESSION['email'].'</p>
