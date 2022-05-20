@@ -28,12 +28,12 @@
         $result = $db->stmt_init();
         $result->prepare('SELECT * FROM Spots;');
         $result->execute();
-        $result->bind_result($spotid, $name, $description, $location, $photography);
+        $result->bind_result($name, $description, $approach, $conditions, $photography);
 
         while ($result->fetch() != null){ //Recorre los registros devueltos
             // echo $name." ".$description." ".$address." ".$phonenumber." ".$photography." ";
 
-            $spot[] = new Spot ($spotid, $name, $description, $location, $photography);
+            $spot[] = new Spot ($name, $description, $approach, $conditions, $photography);
         }
         return $spot;
         

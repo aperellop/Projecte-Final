@@ -16,7 +16,7 @@
                 
             }
             .cabecera{
-                height: 400px;;
+                height: 400px;
                 width: 1320px;
                 font-size: 150px;
             }
@@ -51,6 +51,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col p-5 text-left">
+                            <img class="circular--square" src="'.$_SESSION['photography'].'" height="50" width="50">
                             <p class="h4 mx-lg-5 text-light" >Hello, '.$_SESSION['name'].'</p>
                             <p class="mx-lg-5 text-light" >'.$_SESSION['email'].'</p>
                         </div>
@@ -76,7 +77,7 @@
         </div>
 
         <?php
-            // $connectDB = connectDB();
+            //$connectDB = connectDB();
             $spots = getSpots();
 
             // Loop where we iterate as many times as we have restaurants, printing all the info of these inside bootstrap cards
@@ -86,7 +87,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-5">
-                                    <a href="/restaurantsdb.php?id='.$i.'"><p class="h3 card-title">'.$spots[$i]->name.'</p></a>
+                                    <a href="/thecrackDB.php?id='.$i.'"><p class="h3 card-title">'.$spots[$i]->name.'</p></a>
                                     <p class="card-text">'.$spots[$i]->description.'</p>
                                     <p class="card-text">'.$spots[$i]->location.'</p>
                                 </div>
