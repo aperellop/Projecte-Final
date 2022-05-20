@@ -14,6 +14,9 @@
                 text-align:center;
                 margin:0 auto;
             }
+            .circular--square {
+                border-radius: 50%;
+            }
         </style>
 
         <?php
