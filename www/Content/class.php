@@ -1,16 +1,16 @@
 <?php
-    class Restaurant{
+    class Spot{
         public $name;
-        public $address;
-        public $phonenumber;
         public $description;
+        public $approach;
+        public $conditions;
         public $photography;
 
-        public function __construct($name, $address, $phonenumber, $description, $photography){
+        public function __construct($name, $description, $approach, $conditions, $photography){
             $this->name = $name;
-            $this->address = $address;
-            $this->phonenumber = $phonenumber;
             $this->description = $description;
+            $this->approach = $approach;
+            $this->conditions = $conditions;
             $this->photography = $photography;
         }
     }

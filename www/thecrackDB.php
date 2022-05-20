@@ -14,30 +14,30 @@
         <p class="h1 text-center text-light">The Crack</p>
                 
         <?php
-            include './Content/getRestaurants.php';
+            include './Content/getSpots.php';
             include './Structure/footer.php';
         ?>
 
         <?php
 
             $i = $_GET["id"];
-            $restaurants = getRestaurant($i);
+            $spots = getSpots($i);
 
-            // print_r($restaurants);
+            print_r($spots);
 
             print('
                 <div class="card d-flex mx-lg-5 text-center">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-5">
-                                <h3 class="card-title">'.$restaurants->name.'</h3>
-                                <p class="card-text">'.$restaurants->description.'</p>
-                                <p class="card-text">'.$restaurants->address.'</p>
-                                <p class="card-text">'.$restaurants->phonenumber.'</p>
+                                <h3 class="card-title">'.$Spots->name.'</h3>
+                                <p class="card-text">'.$Spots->description.'</p>
+                                <p class="card-text">'.$Spots->approach.'</p>
+                                <p class="card-text">'.$Spots->conditions.'</p>
                             </div>
 
                             <div class="col-sm-5">
-                                <img src="'.$restaurants->photography.'" width="200">
+                                <img src="'.$Spots->photography.'" width="200">
                             </div>
                         </div>
                     </div>
