@@ -9,7 +9,7 @@
                                 <div class="col">
                                     <div class="row">
                                         <div class="col-4">
-                                            <a title="Logo" href="index.php">   <img class="circular--square" src="./../Resources/Photographies/Structure/logo.jpg" alt="Logo" width="100" height="100" /> </a>
+                                            <a href="index.php">   <img class="circular--square" src="./../Resources/Photographies/Structure/logo.jpg" alt="Logo" width="100" height="100" /> </a>
                                         </div>
                                         <div class="col-8 p-5 text-center">
                                             <p style="line-height: 50%" class="h5 text-center text-light">the</p>
