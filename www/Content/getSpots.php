@@ -1,6 +1,6 @@
 <?php
     include './Structure/navbar.php';
-    include 'class.php';
+    include 'classSpot.php';
     include 'connection.php';
 ?>
 
