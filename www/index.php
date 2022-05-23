@@ -30,9 +30,9 @@
         </style>
             <!-- Includes -->
         <?php
-            include 'content/get/getspots.php';
-            include 'structure/navbar.php';
-            include 'structure/footer.php';
+            include './Content/getSpots.php';
+            include './Structure/navbar.php';
+            include './Structure/footer.php';
         ?>
     </head>
     <header>
@@ -56,7 +56,7 @@
                             <p class="mx-lg-5 text-light" >'.$_SESSION['email'].'</p>
                         </div>
                         <div class="col-1">
-                            <a class="mx-lg-5" href="./Log/logout.php"><button type="button">Log out</button></a>
+                            <a class="mx-lg-5" href="logout.php"><button type="button">Log out</button></a>
                         </div>
                     </div>
                 </div>
@@ -65,8 +65,7 @@
                 // Sinó printa un saludo genérico y el botón para logearse
                 print('
                     <p class="h5 mx-lg-5 text-light" >Hello, guest</p>
-
-                    <a class="mx-lg-5" href="./Log/login.php"><button type="button">Log in</button></a>
+                    <a class="mx-lg-5" href="login.php"><button type="button">Log in</button></a>
                 ');
             }
         ?>
@@ -99,7 +98,6 @@
                                     <!-- <p class="card-text">'.$spots[$i]->approach.'</p> -->
                                     <!-- <p class="card-text">'.$spots[$i]->conditions.'</p> -->
                                 </div>
-
                                 <div class="col-5 sm-5">
                                     <img src="'.$spots[$i]->photography.'" width="300">
                                 </div>

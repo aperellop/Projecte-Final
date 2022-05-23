@@ -30,8 +30,8 @@
         </style>
             <!-- Includes -->
         <?php
-            include './Content/Get/getSpots.php';
-            include './Content/Get/getSectors.php';
+            include './Content/getSpots.php';
+            include './Content/getSectors.php';
             include './Structure/footer.php';
         ?>
     </head>
@@ -88,6 +88,7 @@
                     </br>
                 ');
             }
+
         ?>
             <!-- Footer -->
         <?php

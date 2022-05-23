@@ -1,6 +1,6 @@
 <?php
-    include './../../content/class/classspot.php';
-    include './../connection.php';
+    include 'classSpot.php';
+    include 'connection.php';
 ?>
 
 <?php

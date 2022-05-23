@@ -1,24 +1,24 @@
 <?php
-    include './../Class/classSector.php';
-    include './../connection.php';
+    include 'classSpot.php';
+    include 'connection.php';
 ?>
 
 <?php
-    function getSectors(){
+    function getSpots(){
         // Conexión a la base de datos
         $db = connectDB();
 
         $result = $db->stmt_init();
-        $result->prepare('SELECT * FROM Sectors WHERE spot='.$Spot.';');
+        $result->prepare('SELECT * FROM Spots;');
         $result->execute();
-        $result->bind_result($spot, $name, $description, $approach);
+        $result->bind_result($name, $description, $approach, $conditions, $photography);
 
         while ($result->fetch() != null){ //Recorremos los registros devueltos
             
             //Creamos el array de objetos
-            $sector[] = new Sector ($spot, $name, $description, $approach);
+            $spot[] = new Spot ($name, $description, $approach, $conditions, $photography);
         }
-        return $sector;
+        return $spot;
         
         $result->close();
         $db->close();
