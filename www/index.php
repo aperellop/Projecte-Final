@@ -36,6 +36,7 @@
     </head>
 
     <body class="bg-dark">
+        <!-- Sesion -->
         <?php
             // Si hay una sesión iniciada
             if (isset($_SESSION['username'])){
@@ -72,6 +73,7 @@
             <p class="h4 text-center text-light">de escalada en roca y búlder de Mallorca</p>
         </div>
 
+        <!-- Spots -->
         <?php
             // Introducimos la funcion getSpots en la variable $spots
             $spots = getSpots();
