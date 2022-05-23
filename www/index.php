@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <title>The Crack</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <!-- CSS -->
+            <!-- CSS -->
         <style>
             .image-fondo {
                 background-image: url("./Resources/Photographies/Structure/serra-de-tramuntana-mallorca.jpg");
@@ -28,7 +28,7 @@
                 border-radius: 50%;
             }
         </style>
-        <!-- Includes -->
+            <!-- Includes -->
         <?php
             include './Content/getSpots.php';
             include './Structure/navbar.php';
@@ -36,13 +36,13 @@
         ?>
     </head>
     <header>
-        <!-- Navbar -->
+            <!-- Navbar -->
         <?php
             navbar();
         ?>
     </header>
     <body class="bg-dark">
-        <!-- Sesion -->
+            <!-- Sesion -->
         <?php
             // Si hay una sesión iniciada
             if (isset($_SESSION['username'])){
@@ -70,13 +70,13 @@
                 ');
             }
         ?>
-        <!-- Cabecera -->
+            <!-- Cabecera -->
         <div class="image-fondo cabecera body">
             <p class="text-center text-light">The Crack</p>
             <p class="h4 text-center text-light">Te damos la bienvenida a la plataforma colaborativa</p>
             <p class="h4 text-center text-light">de escalada en roca y búlder de Mallorca</p>
         </div>
-        <!-- Spots -->
+            <!-- Spots -->
         <?php
             // Introducimos la funcion getSpots en la variable $spots
             $spots = getSpots();
@@ -110,7 +110,7 @@
                 ');
             }
         ?>
-        <!-- Footer -->
+            <!-- Footer -->
         <?php
             footer();
         ?>
