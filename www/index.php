@@ -30,9 +30,9 @@
         </style>
             <!-- Includes -->
         <?php
-            include './Content/Get/getSpots.php';
-            include './Structure/navbar.php';
-            include './Structure/footer.php';
+            include 'Content/Get/getSpots.php';
+            include 'Structure/navbar.php';
+            include 'Structure/footer.php';
         ?>
     </head>
     <header>
