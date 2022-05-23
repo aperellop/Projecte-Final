@@ -31,10 +31,16 @@
 
         <?php
             include './Content/getSpots.php';
+            include './Structure/navbar.php';
             include './Structure/footer.php';
         ?>
     </head>
-
+    <header>
+        <!-- Navbar -->
+        <?php
+            navbar();
+        ?>
+    </header>
     <body class="bg-dark">
         <!-- Sesion -->
         <?php
@@ -65,14 +71,12 @@
                 ');
             }
         ?>
-
         <!-- Cabecera -->
         <div class="image-fondo cabecera body">
             <p class="text-center text-light">The Crack</p>
             <p class="h4 text-center text-light">Te damos la bienvenida a la plataforma colaborativa</p>
             <p class="h4 text-center text-light">de escalada en roca y búlder de Mallorca</p>
         </div>
-
         <!-- Spots -->
         <?php
             // Introducimos la funcion getSpots en la variable $spots
@@ -107,7 +111,6 @@
                 ');
             }
         ?>
-
         <!-- Footer -->
         <?php
             footer();
