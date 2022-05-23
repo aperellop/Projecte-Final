@@ -20,9 +20,9 @@
         </style>
 
         <?php
-            include_once 'Structure/navbar.php';
-            include_once 'Structure/footer.php';
-            include_once 'Content/connection.php';
+            include_once './../Structure/navbar.php';
+            include_once './../Structure/footer.php';
+            include_once './../Content/connection.php';
         ?>
     </head>
 
@@ -87,7 +87,7 @@
                             print('
                                 <div class="body">
                                     <p class="text-light">Sesión iniciada</p>
-                                    <a href="index.php">Vuelve a la página Home</a>
+                                    <a href="./../index.php">Vuelve a la página Home</a>
                                 </div>
                             ');
 
