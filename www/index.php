@@ -37,9 +37,10 @@
 
     <body class="bg-dark">
         <?php
+            // Si hay una sesión iniciada
             if (isset($_SESSION['username'])){
+                // Printa la foto, nombre y email del usuario de la sesión y el botón para deslogearse
                 print('
-
                 </br>
                 <div class="container">
                     <div class="row">
@@ -55,6 +56,7 @@
                 </div>
                 ');
             } else {
+                // Sinó printa un saludo genérico y el botón para logearse
                 print('
                     <p class="h5 mx-lg-5 text-light" >Hello, guest</p>
 
@@ -63,6 +65,7 @@
             }
         ?>
 
+        <!-- Cabecera -->
         <div class="image-fondo cabecera body">
             <p class="text-center text-light">The Crack</p>
             <p class="h4 text-center text-light">Te damos la bienvenida a la plataforma colaborativa</p>
@@ -70,13 +73,14 @@
         </div>
 
         <?php
-            //$connectDB = connectDB();
+            // Introducimos la funcion getSpots en la variable $spots
             $spots = getSpots();
 
+            // Contamos cuantos objetos tenemos dentro del array $spots y lo metemos en la variable $numSpots
             $numSpots = count($spots);
-            echo $numSpots;
+            // echo $numSpots;
 
-            // Loop where we iterate as many times as we have restaurants, printing all the info of these inside bootstrap cards
+            // Bucle que itera tantas veces como Spots haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
             for($i=0;$i<$numSpots;$i++){
                 print('
                     </br>
