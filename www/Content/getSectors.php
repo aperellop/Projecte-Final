@@ -1,11 +1,6 @@
 <?php
-    include './Structure/navbar.php';
     include 'classSector.php';
     include 'connection.php';
-?>
-
-<?php
-    navbar();
 ?>
 
 <?php

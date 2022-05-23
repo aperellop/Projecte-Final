@@ -8,12 +8,7 @@
         <meta charset="UTF-8">
         <title>The Crack</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        
-        <?php
-            include './Content/getSectors.php';
-            include './Structure/footer.php';
-        ?>
-
+            <!-- CSS -->
         <style>
             .image-fondo {
                 background-image: url("./Resources/Photographies/Structure/serra-de-tramuntana-mallorca.jpg");
@@ -33,11 +28,15 @@
                 border-radius: 50%;
             }
         </style>
+            <!-- Includes -->
+        <?php
+            include './Content/getSpots.php';
+            include './Content/getSectors.php';
+            include './Structure/footer.php';
+        ?>
     </head>
-
     <body class="bg-dark">
-
-        <!-- Información del Spot seleccionado -->
+            <!-- Información del Spot seleccionado -->
         <?php
             $i = $_GET["id"];
             $spots = getSpots($i);
@@ -62,9 +61,10 @@
                 </div>
             ');
         ?>
-
-        <!-- Tarjetas de los Sectores -->
+            <!-- Tarjetas de los Sectores -->
         <?php
+            // $sectors = getSectors()
+
             // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
             $numSectors = count($sectors);
             // echo $numSpots;
@@ -90,7 +90,7 @@
             }
 
         ?>
-
+            <!-- Footer -->
         <?php
             footer();
         ?>
