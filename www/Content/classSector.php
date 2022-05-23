@@ -1,17 +1,15 @@
 <?php
-    class Spot{
+    class Sector{
+        public $spot;
         public $name;
         public $description;
         public $approach;
-        public $conditions;
-        public $photography;
 
-        public function __construct($name, $description, $approach, $conditions, $photography){
+        public function __construct($spot, $name, $description, $approach){
+            $this->spot = $spot;
             $this->name = $name;
             $this->description = $description;
             $this->approach = $approach;
-            $this->conditions = $conditions;
-            $this->photography = $photography;
         }
     }
 ?>
