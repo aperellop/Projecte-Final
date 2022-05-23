@@ -30,17 +30,10 @@
         </style>
 
         <?php
-            include './Structure/navbar.php';
             include './Content/getSpots.php';
             include './Structure/footer.php';
         ?>
     </head>
-
-    <header>
-        <?php
-            navbar();
-        ?>
-    </header>
 
     <body class="bg-dark">
         <?php
@@ -80,20 +73,26 @@
             //$connectDB = connectDB();
             $spots = getSpots();
 
+            $numSpots = count($spots);
+            echo $numSpots;
+
             // Loop where we iterate as many times as we have restaurants, printing all the info of these inside bootstrap cards
-            for($i=0;$i<5;$i++){
+            for($i=0;$i<$numSpots;$i++){
                 print('
-                    <div class="card d-flex mx-lg-5 text-center">
+                    </br>
+                    </br>
+                    <div class="card d-flex mx-lg-5">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-5">
-                                    <a href="/thecrackDB.php?id='.$i.'"><p class="h3 card-title">'.$spots[$i]->name.'</p></a>
+                                <div class="col-5 sm-5">
+                                    <a href="/Spots.php?id='.$i.'"><p class="h3 card-title text-center">'.$spots[$i]->name.'</p></a>
                                     <p class="card-text">'.$spots[$i]->description.'</p>
-                                    <p class="card-text">'.$spots[$i]->location.'</p>
+                                    <!-- <p class="card-text">'.$spots[$i]->approach.'</p> -->
+                                    <!-- <p class="card-text">'.$spots[$i]->conditions.'</p> -->
                                 </div>
 
-                                <div class="col-sm-5">
-                                    <img src="'.$spots[$i]->photography.'" width="200">
+                                <div class="col-5 sm-5">
+                                    <img src="'.$spots[$i]->photography.'" width="300">
                                 </div>
                             </div>
                         </div>
