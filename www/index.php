@@ -30,7 +30,7 @@
         </style>
             <!-- Includes -->
         <?php
-            include './Content/getSpots.php';
+            include './Content/Get/getSpots.php';
             include './Structure/navbar.php';
             include './Structure/footer.php';
         ?>
