@@ -37,8 +37,8 @@
 
     <body class="bg-dark">
 
+        <!-- Información del Spot seleccionado -->
         <?php
-
             $i = $_GET["id"];
             $spots = getSpots($i);
 
@@ -61,7 +61,10 @@
                     </div
                 </div>
             ');
+        ?>
 
+        <!-- Tarjetas de los Sectores -->
+        <?php
             // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
             $numSectors = count($sectors);
             // echo $numSpots;
