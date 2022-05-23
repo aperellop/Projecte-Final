@@ -32,9 +32,16 @@
         <?php
             include './Content/getSpots.php';
             include './Content/getSectors.php';
+            include './Structure/navbar.php';
             include './Structure/footer.php';
         ?>
     </head>
+    <header>
+            <!-- Navbar -->
+        <?php
+            navbar();
+        ?>
+    </header>
     <body class="bg-dark">
             <!-- Información del Spot seleccionado -->
         <?php
@@ -63,31 +70,32 @@
         ?>
             <!-- Tarjetas de los Sectores -->
         <?php
+            // // Introducimos la funcion getSectors en la variable $sectors
             // $sectors = getSectors()
 
-            // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
-            $numSectors = count($sectors);
-            // echo $numSpots;
+            // // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
+            // $numSectors = count($sectors);
+            // echo $numSectors;
 
-            // Bucle que itera tantas veces como Sectores haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
-            for($i=0;$i<$numSectors;$i++){
-                print('
-                    </br>
-                    </br>
-                    <div class="card d-flex mx-lg-5">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-5 sm-5">
-                                    <a href="/Spots.php?id='.$i.'"><p class="h3 card-title text-center">'.$sectors[$i]->name.'</p></a>
-                                    <p class="card-text">'.$sectors[$i]->description.'</p>
-                                    <p class="card-text">'.$sectors[$i]->approach.'</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </br>
-                ');
-            }
+            // // Bucle que itera tantas veces como Sectores haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
+            // for($i=0;$i<$numSectors;$i++){
+            //     print('
+            //         </br>
+            //         </br>
+            //         <div class="card d-flex mx-lg-5">
+            //             <div class="card-body">
+            //                 <div class="row">
+            //                     <div class="col-5 sm-5">
+            //                         <a href="/Spots.php?id='.$i.'"><p class="h3 card-title text-center">'.$sectors[$i]->name.'</p></a>
+            //                         <p class="card-text">'.$sectors[$i]->description.'</p>
+            //                         <p class="card-text">'.$sectors[$i]->approach.'</p>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //         </div>
+            //         </br>
+            //     ');
+            // }
 
         ?>
             <!-- Footer -->

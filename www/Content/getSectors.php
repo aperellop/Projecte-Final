@@ -1,6 +1,6 @@
 <?php
     include 'classSector.php';
-    include 'connection.php';
+    // include 'connection.php'; /PROBLEMA
 ?>
 
 <?php
@@ -9,7 +9,7 @@
         $db = connectDB();
 
         $result = $db->stmt_init();
-        $result->prepare('SELECT * FROM Sectors WHERE spot='.$Spot.';');
+        $result->prepare('SELECT * FROM Sectors WHERE spot='.$spot.';');
         $result->execute();
         $result->bind_result($spot, $name, $description, $approach);
 
