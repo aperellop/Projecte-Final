@@ -56,7 +56,7 @@
                             <p class="mx-lg-5 text-light" >'.$_SESSION['email'].'</p>
                         </div>
                         <div class="col-1">
-                            <a class="mx-lg-5" href="logout.php"><button type="button">Log out</button></a>
+                            <a class="mx-lg-5" href="./Log/logout.php"><button type="button">Log out</button></a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                 print('
                     <p class="h5 mx-lg-5 text-light" >Hello, guest</p>
 
-                    <a class="mx-lg-5" href="login.php"><button type="button">Log in</button></a>
+                    <a class="mx-lg-5" href="./Log/login.php"><button type="button">Log in</button></a>
                 ');
             }
         ?>

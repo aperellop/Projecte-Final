@@ -1,5 +1,5 @@
 <?php
-    include './../Class/classSpot.php';
+    include '../Class/classSpot.php';
     include './../connection.php';
 ?>
 
