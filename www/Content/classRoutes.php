@@ -1,17 +1,15 @@
 <?php
-    class Spot{
+    class Route{
+        public $sector;
         public $name;
         public $description;
-        public $approach;
-        public $conditions;
-        public $photography;
+        public $grade;
 
-        public function __construct($name, $description, $approach, $conditions, $photography){
+        public function __construct($sector, $name, $description, $grade){
+            $this->sector = $sector;
             $this->name = $name;
             $this->description = $description;
-            $this->approach = $approach;
-            $this->conditions = $conditions;
-            $this->photography = $photography;
+            $this->grade = $grade;
         }
     }
 ?>
