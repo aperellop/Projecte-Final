@@ -45,48 +45,24 @@
             // print_r($spots);
 
             print('
-                    </br>
-                    </br>
-                    <div class="card d-flex mx-lg-5">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-5 sm-5">
-                                    <a href="/Spots.php?id='.$i.'"><p class="h3 card-title text-center">'.$spots[$i]->name.'</p></a>
-                                    <p class="card-text">'.$spots[$i]->description.'</p>
-                                    <p class="h4">Aproximación<p>
-                                    <p class="card-text">'.$spots[$i]->approach.'</p>
-                                    <p class="h4">Condiciones<p>
-                                    <p class="card-text">'.$spots[$i]->conditions.'</p>
-                                </div>
-
-                                <div class="col-5 sm-5">
-                                    <img src="'.$spots[$i]->photography.'" width="300">
-                                </div>
-                            </div>
+                <p class="h1 card-title text-center text-light">'.$spots[$i]->name.'</p>
+                <div class=" container text-light m-5">
+                    <div class="row">
+                        <div class="col text-left">
+                            <p class="card-text">'.$spots[$i]->description.'</p>
+                            <p class="h4">Aproximación<p>
+                            <p class="card-text">'.$spots[$i]->approach.'</p>
+                            <p class="h4">Condiciones<p>
+                            <p class="card-text">'.$spots[$i]->conditions.'</p>
                         </div>
-                    </div>
-                    </br>
-                ');
+                        <div class="col-1 text-left">
+                            <img src="'.$spots[$i]->photography.'" width="500">
+                        </div>
+                    </div
+                </div>
+            ');
 
-            // print('
-            //     <div class="card d-flex mx-lg-5 text-center">
-            //         <div class="card-body">
-            //             <div class="row">
-            //                 <div class="col-sm-5">
-            //                     <h3 class="card-title">'.$Spots->name.'</h3>
-            //                     <p class="card-text">'.$Spots->description.'</p>
-            //                     <p class="card-text">'.$Spots->approach.'</p>
-            //                     <p class="card-text">'.$Spots->conditions.'</p>
-            //                 </div>
-
-            //                 <div class="col-sm-5">
-            //                     <img src="'.$Spots->photography.'" width="200">
-            //                 </div>
-            //             </div>
-            //         </div>
-            //     </div>
-            //     </br>
-            // '); 
+            
         ?>
 
         <?php
