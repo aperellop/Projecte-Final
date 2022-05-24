@@ -20,6 +20,14 @@
                 width: 1320px;
                 font-size: 150px;
             }
+            .margenes{
+                height: 400px;
+                width: 1320px;
+                float: none; 
+                margin-left: auto; 
+                margin-right: auto;
+
+            }
             .body{
                 text-align:center;
                 margin:0 auto;
@@ -42,7 +50,34 @@
             navbar();
         ?>
     </header>
-    <body class="bg-dark">
+    <body class="bg-dark margenes">
+            <!-- Sesion -->
+        <?php
+            // Si hay una sesión iniciada
+            if (isset($_SESSION['username'])){
+                // Printa la foto, nombre y email del usuario de la sesión y el botón para deslogearse
+                print('
+                <div class="container">
+                    <div class="row">
+                        <div class="col p-5 text-left">
+                            <img class="circular--square" src="'.$_SESSION['photography'].'" height="50" width="50">
+                            <p class="h4 mx-lg-5 text-light" >Hello, '.$_SESSION['name'].'</p>
+                            <p class="mx-lg-5 text-light" >'.$_SESSION['email'].'</p>
+                        </div>
+                        <div class="col-1">
+                            <a class="mx-lg-5" href="logout.php"><button type="button">Log out</button></a>
+                        </div>
+                    </div>
+                </div>
+                ');
+            } else {
+                // Sinó printa un saludo genérico y el botón para logearse
+                print('
+                    <p class="h5 mx-lg-5 text-light" >Hello, guest</p>
+                    <a class="mx-lg-5" href="login.php"><button type="button">Log in</button></a>
+                ');
+            }
+        ?>
             <!-- Información del Spot seleccionado -->
         <?php
             $i = $_GET["id"];
@@ -52,16 +87,16 @@
 
             print('
                 <p class="h1 card-title text-center text-light">'.$spots[$i]->name.'</p>
-                <div class=" container text-light m-5">
+                <div class=" container text-light m-5 margenes">
                     <div class="row">
-                        <div class="col text-left">
+                        <div class="col-6 text-left">
                             <p class="card-text">'.$spots[$i]->description.'</p>
                             <p class="h4">Aproximación<p>
                             <p class="card-text">'.$spots[$i]->approach.'</p>
                             <p class="h4">Condiciones<p>
                             <p class="card-text">'.$spots[$i]->conditions.'</p>
                         </div>
-                        <div class="col-1 text-left">
+                        <div class="col text-left">
                             <img src="'.$spots[$i]->photography.'" width="500">
                         </div>
                     </div
@@ -70,32 +105,32 @@
         ?>
             <!-- Tarjetas de los Sectores -->
         <?php
-            // // Introducimos la funcion getSectors en la variable $sectors
-            // $sectors = getSectors()
-
-            // // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
-            // $numSectors = count($sectors);
+            // Introducimos la funcion getSectors en la variable $sectors
+            $sectors = getSectors();
+        
+            // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
+            $numSectors = count($sectors);
             // echo $numSectors;
 
-            // // Bucle que itera tantas veces como Sectores haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
-            // for($i=0;$i<$numSectors;$i++){
-            //     print('
-            //         </br>
-            //         </br>
-            //         <div class="card d-flex mx-lg-5">
-            //             <div class="card-body">
-            //                 <div class="row">
-            //                     <div class="col-5 sm-5">
-            //                         <a href="/Spots.php?id='.$i.'"><p class="h3 card-title text-center">'.$sectors[$i]->name.'</p></a>
-            //                         <p class="card-text">'.$sectors[$i]->description.'</p>
-            //                         <p class="card-text">'.$sectors[$i]->approach.'</p>
-            //                     </div>
-            //                 </div>
-            //             </div>
-            //         </div>
-            //         </br>
-            //     ');
-            // }
+            // Bucle que itera tantas veces como Sectores haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
+            for($i=0;$i<$numSectors;$i++){
+                print('
+                    </br>
+                    </br>
+                    <div class="card d-flex mx-lg-5">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-5 sm-5">
+                                    <a href="/Spots.php?id='.$i.'"><p class="h3 card-title text-center">'.$sectors[$i]->name.'</p></a>
+                                    <p class="card-text">'.$sectors[$i]->description.'</p>
+                                    <p class="card-text">'.$sectors[$i]->approach.'</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </br>
+                ');
+            }
 
         ?>
             <!-- Footer -->
