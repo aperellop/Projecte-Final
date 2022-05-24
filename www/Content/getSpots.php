@@ -4,12 +4,12 @@
 ?>
 
 <?php
-    function getSpots(){
+    function getSpots($id){
         // Conexión a la base de datos
         $db = connectDB();
 
         $result = $db->stmt_init();
-        $result->prepare('SELECT * FROM Spots;');
+        $result->prepare('SELECT * FROM Spots WHERE id='.$id.';');
         $result->execute();
         $result->bind_result($name, $description, $approach, $conditions, $photography);
 
