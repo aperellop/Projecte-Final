@@ -16,9 +16,17 @@
                 
             }
             .cabecera{
+                font-size: 150px;
                 height: 400px;
                 width: 1320px;
-                font-size: 150px;
+            }
+            .margenes{
+                height: 400px;
+                width: 1320px;
+                float: none; 
+                margin-left: auto; 
+                margin-right: auto;
+
             }
             .body{
                 text-align:center;
@@ -41,7 +49,7 @@
             navbar();
         ?>
     </header>
-    <body class="bg-dark">
+    <body class="bg-dark margenes">
             <!-- Sesion -->
         <?php
             // Si hay una sesión iniciada
@@ -92,13 +100,13 @@
                     <div class="card d-flex mx-lg-5">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col sm-5">
+                                <div class="col-6 m-3">
                                     <a href="/Spots.php?id='.$i.'"><p class="h3 card-title text-center">'.$spots[$i]->name.'</p></a>
                                     <p class="card-text">'.$spots[$i]->description.'</p>
                                     <!-- <p class="card-text">'.$spots[$i]->approach.'</p> -->
                                     <!-- <p class="card-text">'.$spots[$i]->conditions.'</p> -->
                                 </div>
-                                <div class="col-3 sm-5">
+                                <div class="col-2 m-5">
                                     <img src="'.$spots[$i]->photography.'" width="300">
                                 </div>
                             </div>
