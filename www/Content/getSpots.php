@@ -4,18 +4,18 @@
 ?>
 
 <?php
-    function getSpots($id){
+    function getSpots(){
         // Conexión a la base de datos
         $db = connectDB();
 
         $result = $db->stmt_init();
-        $result->prepare('SELECT * FROM Spots WHERE id='.$id.';');
+        $result->prepare('SELECT * FROM Spots;');
         $result->execute();
-        $result->bind_result($name, $description, $approach, $conditions, $photography);
+        $result->bind_result($id, $name, $description, $approach, $conditions, $photography);
 
         while ($result->fetch() != null){ //Recorremos los registros devueltos
             //Creamos el array de objetos
-            $spot[] = new Spot ($name, $description, $approach, $conditions, $photography);
+            $spot[] = new Spot ($id, $name, $description, $approach, $conditions, $photography);
         }
         return $spot;
         

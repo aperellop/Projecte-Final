@@ -71,7 +71,7 @@
             // echo $numSpots;
 
             // Bucle que itera tantas veces como Spots haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
-            for($i=0;$i<$numSpots;$i++){
+            for($i = 0; $i < $numSpots; $i++){
                 print('
                     </br>
                     </br>
@@ -79,7 +79,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-6 m-3">
-                                    <a href="/Spots.php?id='.$i.'"><p class="h3 card-title text-center">'.$spots[$i]->name.'</p></a>
+                                    <a href="/Spots.php?id='.$spots[$i]->id.'"><p class="h3 card-title text-center">'.$spots[$i]->name.'</p></a>
                                     <p class="card-text">'.$spots[$i]->description.'</p>
                                     <!-- <p class="card-text">'.$spots[$i]->approach.'</p> -->
                                     <!-- <p class="card-text">'.$spots[$i]->conditions.'</p> -->
