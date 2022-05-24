@@ -14,7 +14,6 @@
         $result->bind_result($name, $description, $approach, $conditions, $photography);
 
         while ($result->fetch() != null){ //Recorremos los registros devueltos
-            
             //Creamos el array de objetos
             $spot[] = new Spot ($name, $description, $approach, $conditions, $photography);
         }
