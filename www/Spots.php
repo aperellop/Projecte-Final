@@ -64,30 +64,32 @@
             // print_r($spots);
 
             print('
-                <p class="h1 card-title text-center text-light">'.$spots[$i]->name.'</p>
+                <p class="h1 card-title text-center text-light">'.$spots[$id]->name.'</p>
                 <div class=" container text-light m-5 margenes">
                     <div class="row">
                         <div class="col-6 text-left">
-                            <p class="card-text">'.$spots[$i]->description.'</p>
+                            <p class="card-text">'.$spots[$id]->description.'</p>
                             <p class="h4">Aproximación<p>
-                            <p class="card-text">'.$spots[$i]->approach.'</p>
+                            <p class="card-text">'.$spots[$id]->approach.'</p>
                             <p class="h4">Condiciones<p>
-                            <p class="card-text">'.$spots[$i]->conditions.'</p>
+                            <p class="card-text">'.$spots[$id]->conditions.'</p>
                         </div>
                         <div class="col text-left">
-                            <img src="'.$spots[$i]->photography.'" width="500">
+                            <img src="'.$spots[$id]->photography.'" width="500">
                         </div>
                     </div
                 </div>
+                </br>
             ');
+
         ?>
             <!-- Tarjetas de los Sectores -->
         <?php
-            $nomspot = $spots[$i]->name;
-            print($nomspot);
+            $nomspot = $spots[$id]->name;
+            echo $nomspot;
 
             // Introducimos la funcion getSectors en la variable $sectors
-            $sectors = getSectors($nomspot);
+            $sectors = getSectors();
         
             // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
             $numSectors = count($sectors);
@@ -102,7 +104,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-5 sm-5">
-                                    <a href="/Spots.php?id='.$i.'"><p class="h3 card-title text-center">'.$sectors[$i]->name.'</p></a>
+                                    <a href="/Spots.php?id='.$sectors[$i]->id.'"><p class="h3 card-title text-center">'.$sectors[$i]->name.'</p></a>
                                     <p class="card-text">'.$sectors[$i]->description.'</p>
                                     <p class="card-text">'.$sectors[$i]->approach.'</p>
                                 </div>
