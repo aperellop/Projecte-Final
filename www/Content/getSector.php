@@ -1,10 +1,10 @@
 <?php
     include 'classSector.php';
-    // include 'connection.php';
+    include 'connection.php';
 ?>
 
 <?php
-    function getSector(){
+    function getSector($id){
         // Conexión a la base de datos
         $db = connectDB();
 

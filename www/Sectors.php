@@ -38,7 +38,7 @@
         </style>
             <!-- Includes -->
         <?php
-            include './Content/getSectors.php';
+            include './Content/getSector.php';
             include './Content/getRoutes.php';
             include './Structure/navbar.php';
             include './Structure/session.php';
@@ -59,22 +59,22 @@
             <!-- Información del Sector seleccionado -->
         <?php
             $id = $_GET["id"];
-            $sector = getSector();
+            $sector = getSector($id);
             print_r($sector);
 
-            // print('
-            //     <p class="h1 card-title text-center text-light">'.$sector[$id]->name.'</p>
-            //     <div class=" container text-light m-5 margenes">
-            //         <div class="row">
-            //             <div class="col-6 text-left">
-            //                 <p class="card-text">'.$sector[$id]->description.'</p>
-            //                 <p class="h4">Aproximación<p>
-            //                 <p class="card-text">'.$sector[$id]->approach.'</p>
-            //             </div>
-            //         </div
-            //     </div>
-            //     </br>
-            // ');
+            print('
+                <p class="h1 card-title text-center text-light">'.$sector[$id]->name.'</p>
+                <div class=" container text-light m-5 margenes">
+                    <div class="row">
+                        <div class="text-left">
+                            <p class="card-text">'.$sector[$id]->description.'</p>
+                            <p class="h4">Aproximación<p>
+                            <p class="card-text">'.$sector[$id]->approach.'</p>
+                        </div>
+                    </div
+                </div>
+                </br>
+            ');
 
         ?>
             <!-- Tarjetas de las Rutas -->
