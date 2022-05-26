@@ -45,8 +45,8 @@
             include './Structure/footer.php';
         ?>
     </head>
+        <!-- Navbar -->
     <header>
-            <!-- Navbar -->
         <?php
             navbar();
         ?>
@@ -83,13 +83,13 @@
             // echo $Sector;
             print('</br>');
 
-            // Introducimos la funcion getSectors en la variable $sectors
+            // Introducimos la funcion getRoutes en la variable $routes
             $routes = getRoutes($Sector);
         
-            // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
+            // Contamos cuantos objetos tenemos dentro del array $routes y lo metemos en la variable $numRoutes
             $numRoutes = count($routes);
 
-            // Bucle que itera tantas veces como Sectores haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
+            // Bucle que itera tantas veces como Rutas haya, y printa la informacion de cada uno de ellas en cartas Bootstrap
             for($i=0;$i<$numRoutes;$i++){
                 print('
                     </br>
