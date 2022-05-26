@@ -44,8 +44,8 @@
             include './Structure/footer.php';
         ?>
     </head>
+        <!-- Navbar -->
     <header>
-            <!-- Navbar -->
         <?php
             navbar();
         ?>
@@ -70,7 +70,7 @@
             $numSpots = count($spots);
             // echo $numSpots;
 
-            // Bucle que itera tantas veces como Spots haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
+            // Bucle que itera tantas veces como Spots haya gracias a la variable $numSpots, y printa la informacion de cada uno de ellos en cartas Bootstrap
             for($i = 0; $i < $numSpots; $i++){
                 print('
                     </br>
