@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <title>The Crack - Login</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        
+            <!-- CSS -->
         <style>
             .body{
                 text-align:center;
@@ -18,14 +18,14 @@
                 border-radius: 50%;
             }
         </style>
-
+            <!-- Includes -->
         <?php
             include_once 'Structure/navbar.php';
             include_once 'Structure/footer.php';
             include_once 'Content/connection.php';
         ?>
     </head>
-
+        <!-- Navbar -->
     <header>
         <?php
             navbar();
@@ -33,11 +33,8 @@
     </header>
 
     <body class="bg-dark">
+            <!-- Formulario de login donde pedimos username y password -->
         <?php
-            // With the POST method you have to read this parameters, and query the database searching this user.
-            // If this username and password are correct, you have to store the necessary information into sessions variables and return to the index.php page.
-            // If the username or password are not correct, we will notify the user.
-            
             print('
                 <div class="d-flex mx-lg-5 text-light">
                     <form method="post" action="login.php">
@@ -61,41 +58,40 @@
 
                 // print_r($database);
 
-                //Checking if form POST variables are set
+                // Chequeamos que existen los username y contraseña introducidos
                 if (isset($_POST['username']) and isset($_POST['password'])){
-                    //Getting the username and passwd from the form
+                    // Creamos las variables para los campos introducidos
                     $username = $_POST['username'];
                     $password = $_POST['password'];
 
+                    // Preparamos la query donde buscamos la fila del username
                     $sql = ('SELECT * FROM Users WHERE USERNAME="'.$username.'";');
 
-                    //Querying the database for a matching username and veryfying passphrase.
+                    
                     if($userTable = $database->query($sql)) {
+                        // Si el resultado de la query nos da minimo un resultado
                         if($userTable->num_rows>0){
 
                             $user = $userTable->fetch_object();
                             $pwh = $user->password;
-                            // $token = hash('md5', $password);
 
                             if ($password == $pwh) {
-                            //Storing the session ID and email.
-                            $_SESSION['username'] = $user->username;
-                            $_SESSION['name'] = $user->name;
-                            $_SESSION['email'] = $user->email;
-                            $_SESSION['photography'] = $user->photography;
-                            
-                            print('
-                                <div class="body">
-                                    <p class="text-light">Sesión iniciada</p>
-                                    <a href="index.php">Vuelve a la página Home</a>
-                                </div>
-                            ');
-
+                                $_SESSION['username'] = $user->username;
+                                $_SESSION['name'] = $user->name;
+                                $_SESSION['email'] = $user->email;
+                                $_SESSION['photography'] = $user->photography;
+                                
+                                print('
+                                    <div class="body">
+                                        <p class="text-light">Sesión iniciada</p>
+                                        <a href="index.php">Vuelve a la página Home</a>
+                                    </div>
+                                ');
                             }  else {
-                            print ("Incorrect password");
+                            print ("Contraseña incorrecta, inténtelo de nuevo");
                             }
                         } else {
-                            print ("Username not found");
+                            print ("Usuario no existente, debe registrarse");
                         }
                     } else {
                         echo "ERROR";
@@ -103,7 +99,7 @@
                 }
             }
         ?>
-        
+            <!-- Footer -->
         <?php
             footer();
         ?>
