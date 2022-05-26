@@ -60,16 +60,16 @@
         <?php
             $id = $_GET["id"];
             $sector = getSector($id);
-            print_r($sector);
+            // print_r($sector);
 
             print('
-                <p class="h1 card-title text-center text-light">'.$sector[$id]->name.'</p>
+                <p class="h1 card-title text-center text-light">'.$sector->name.'</p>
                 <div class=" container text-light m-5 margenes">
                     <div class="row">
                         <div class="text-left">
-                            <p class="card-text">'.$sector[$id]->description.'</p>
+                            <p class="card-text">'.$sector->description.'</p>
                             <p class="h4">Aproximación<p>
-                            <p class="card-text">'.$sector[$id]->approach.'</p>
+                            <p class="card-text">'.$sector->approach.'</p>
                         </div>
                     </div
                 </div>
@@ -79,7 +79,7 @@
         ?>
             <!-- Tarjetas de las Rutas -->
         <?php
-            $Sector = $sector[$id]->name;
+            $Sector = $sector->name;
             // echo $Sector;
             print('</br>');
 
@@ -98,7 +98,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col m-3">
-                                    <a href="/Routes.php?id='.$routes[$i]->id.'"><p class="h3 card-title text-center">'.$routes[$i]->name.'</p></a>
+                                    <p class="h3 card-title text-center text-dark">'.$routes[$i]->name.'</p>
                                 </div>
                             </div>
                             <div class="row">
