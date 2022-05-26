@@ -31,7 +31,7 @@
             navbar();
         ?>
     </header>
-    <body class="bg-dark">
+    <body class="bg-dark text-light">
             <!-- Formulario de login donde pedimos username y password -->
         <?php
             print('
@@ -82,15 +82,19 @@
                                 
                                 print('
                                     <div class="body">
-                                        <p class="text-light">Sesión iniciada</p>
+                                        <p>Sesión iniciada</p>
                                         <a href="index.php">Vuelve a la página Home</a>
                                     </div>
                                 ');
                             }  else {
-                            print ("Contraseña incorrecta, inténtelo de nuevo");
+                                print ('
+                                    <p class="body">Contraseña incorrecta, inténtelo de nuevo</p>
+                                ');
                             }
                         } else {
-                            print ("Usuario no existente, debe registrarse");
+                            print ('
+                                <p class="body">"Usuario no existente, debe registrarse"</p>
+                            ');
                         }
                     } else {
                         echo "ERROR";
