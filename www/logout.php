@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <title>The Crack - Logout</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        
+            <!-- CSS -->
         <style>
             .body{
                 text-align:center;
@@ -18,25 +18,25 @@
                 border-radius: 50%;
             }
         </style>
-
+            <!-- Includes -->
         <?php
             include_once 'Structure/navbar.php';
             include_once 'Structure/footer.php';
         ?>
     </head>
-
+        <!-- Navbar -->
     <header>
         <?php
             navbar();
         ?>
     </header>
-
     <body class="bg-dark">
+            <!-- Cierre de sesión -->
         <?php
-            // Remove all sassion variables, destroy the session and return to index.php with a form button
+            // Borramos todas las variables de la sesion, destruimos la sesion
             session_unset();
             session_destroy();
-
+            // Printamos un link para volver a index.html
             print('
                 <div class="body">
                     <p class="text-light">Sesión Finalizada</p>
@@ -44,7 +44,7 @@
                 </div>
             ');
         ?>
-        
+            <!-- Footer -->
         <?php
             footer();
         ?>

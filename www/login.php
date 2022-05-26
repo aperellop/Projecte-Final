@@ -31,7 +31,6 @@
             navbar();
         ?>
     </header>
-
     <body class="bg-dark">
             <!-- Formulario de login donde pedimos username y password -->
         <?php
@@ -50,7 +49,7 @@
 
             login();
         ?>
-
+            <!-- Inicio de sesión -->
         <?php
             function login() {
                 //Database connection
