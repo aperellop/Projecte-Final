@@ -60,7 +60,6 @@
         <?php
             $id = $_GET["id"];
             $spots = getSpots();
-
             // print_r($spots);
 
             print('
