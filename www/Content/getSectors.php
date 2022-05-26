@@ -8,6 +8,7 @@
         // Conexión a la base de datos
         $db = connectDB();
 
+        // Preparamos y ejecutamos la query para recoger todos los sectores que pertenecen al $Spot
         $result = $db->stmt_init();
         $result->prepare('SELECT * FROM Sectors WHERE spot="'.$Spot.'";');
         $result->execute();

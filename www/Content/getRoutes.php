@@ -8,6 +8,7 @@
         // Conexión a la base de datos
         $db = connectDB();
 
+        // Preparamos y ejecutamos la query para recoger todas las rutas que pertenecen al $Sector
         $result = $db->stmt_init();
         $result->prepare('SELECT * FROM Routes WHERE sector="'.$Sector.'";');
         $result->execute();

@@ -8,6 +8,7 @@
         // Conexión a la base de datos
         $db = connectDB();
 
+        // Preparamos y ejecutamos la query para recoger todos los Spots
         $result = $db->stmt_init();
         $result->prepare('SELECT * FROM Spots;');
         $result->execute();

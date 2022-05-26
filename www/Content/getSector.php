@@ -8,6 +8,7 @@
         // Conexión a la base de datos
         $db = connectDB();
 
+        // Preparamos y ejecutamos la query para recoger el sector seleccionado
         $result = $db->stmt_init();
         $result->prepare('SELECT * FROM Sectors WHERE id="'.$id.'";');
         $result->execute();

@@ -5,11 +5,10 @@
         $password = "pwd";
         $database = "thecrackDB";
 
-        // Create connection
+        // Creación de la conexion
         $db = new mysqli($servername, $username, $password, $database);
-        // $db->set_charset("utf8");
 
-        // Test connection
+        // Test conexión
         if (mysqli_connect_errno()) {
             printf("Connection Failed: %s\n", mysqli_connect_error());
             return false;
