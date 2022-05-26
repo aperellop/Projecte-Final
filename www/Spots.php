@@ -85,15 +85,14 @@
         ?>
             <!-- Tarjetas de los Sectores -->
         <?php
-            $nomspot = $spots[$id]->name;
-            echo $nomspot;
+            $Spot = $spots[$id]->name;
+            print('</br>');
 
             // Introducimos la funcion getSectors en la variable $sectors
-            $sectors = getSectors();
+            $sectors = getSectors($Spot);
         
             // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
             $numSectors = count($sectors);
-            // echo $numSectors;
 
             // Bucle que itera tantas veces como Sectores haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
             for($i=0;$i<$numSectors;$i++){
@@ -103,10 +102,10 @@
                     <div class="card d-flex mx-lg-5">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-5 sm-5">
-                                    <a href="/Spots.php?id='.$sectors[$i]->id.'"><p class="h3 card-title text-center">'.$sectors[$i]->name.'</p></a>
-                                    <p class="card-text">'.$sectors[$i]->description.'</p>
-                                    <p class="card-text">'.$sectors[$i]->approach.'</p>
+                                <div class="col-6 m-3">
+                                    <a href="/Sectors.php?id='.$sectors[$i]->id.'"><p class="h3 card-title text-center">'.$sectors[$i]->name.'</p></a>
+                                    <p class="card-text text-dark"><b><u>Descripció: </u></b>'.$sectors[$i]->description.'</p>
+                                    <p class="card-text text-dark"><b><u>Aproximació: </u></b>'.$sectors[$i]->approach.'</p>
                                 </div>
                             </div>
                         </div>
