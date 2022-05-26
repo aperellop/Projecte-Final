@@ -4,7 +4,7 @@
 ?>
 
 <?php
-    function getRoutes(){
+    function getRoutes($Sector){
         // Conexión a la base de datos
         $db = connectDB();
 

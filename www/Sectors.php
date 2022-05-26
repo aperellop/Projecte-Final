@@ -79,34 +79,41 @@
         ?>
             <!-- Tarjetas de las Rutas -->
         <?php
-            // $Spot = $spots[$id]->name;
-            // print('</br>');
+            $Sector = $sector[$id]->name;
+            // echo $Sector;
+            print('</br>');
 
-            // // Introducimos la funcion getSectors en la variable $sectors
-            // $sectors = getSectors($Spot);
+            // Introducimos la funcion getSectors en la variable $sectors
+            $routes = getRoutes($Sector);
         
-            // // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
-            // $numSectors = count($sectors);
+            // Contamos cuantos objetos tenemos dentro del array $sectors y lo metemos en la variable $numSectors
+            $numRoutes = count($routes);
 
-            // // Bucle que itera tantas veces como Sectores haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
-            // for($i=0;$i<$numSectors;$i++){
-            //     print('
-            //         </br>
-            //         </br>
-            //         <div class="card d-flex mx-lg-5">
-            //             <div class="card-body">
-            //                 <div class="row">
-            //                     <div class="col-6 m-3">
-            //                         <a href="/Sectors.php?id='.$sectors[$i]->id.'"><p class="h3 card-title text-center">'.$sectors[$i]->name.'</p></a>
-            //                         <p class="card-text text-dark"><b><u>Descripció: </u></b>'.$sectors[$i]->description.'</p>
-            //                         <p class="card-text text-dark"><b><u>Aproximació: </u></b>'.$sectors[$i]->approach.'</p>
-            //                     </div>
-            //                 </div>
-            //             </div>
-            //         </div>
-            //         </br>
-            //     ');
-            // }
+            // Bucle que itera tantas veces como Sectores haya, y printa la informacion de cada uno de ellos en cartas Bootstrap
+            for($i=0;$i<$numRoutes;$i++){
+                print('
+                    </br>
+                    </br>
+                    <div class="card d-flex mx-lg-5">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col m-3">
+                                    <a href="/Routes.php?id='.$routes[$i]->id.'"><p class="h3 card-title text-center">'.$routes[$i]->name.'</p></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col m-3">
+                                    <p class="card-text text-dark"><b><u>Descripció:</u></b> '.$routes[$i]->description.'</p>
+                                </div>
+                                <div class="col m-3 text-center">
+                                    <p class="card-text text-dark h3"><b><u></u></b>'.$routes[$i]->grade.'</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </br>
+                ');
+            }
 
         ?>
             <!-- Footer -->
