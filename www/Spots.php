@@ -45,8 +45,8 @@
             include './Structure/footer.php';
         ?>
     </head>
+        <!-- Navbar -->
     <header>
-            <!-- Navbar -->
         <?php
             navbar();
         ?>
@@ -101,10 +101,10 @@
                     <div class="card d-flex mx-lg-5">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-6 m-3">
+                                <div class="col m-3">
                                     <a href="/Sectors.php?id='.$sectors[$i]->id.'"><p class="h3 card-title text-center">'.$sectors[$i]->name.'</p></a>
-                                    <p class="card-text text-dark"><b><u>Descripció: </u></b>'.$sectors[$i]->description.'</p>
-                                    <p class="card-text text-dark"><b><u>Aproximació: </u></b>'.$sectors[$i]->approach.'</p>
+                                    <p class="card-text text-dark"><b><u>Descripció:</u></b> '.$sectors[$i]->description.'</p>
+                                    <p class="card-text text-dark"><b><u>Aproximació:</u></b> '.$sectors[$i]->approach.'</p>
                                 </div>
                             </div>
                         </div>
