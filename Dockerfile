@@ -11,3 +11,11 @@ RUN docker-php-ext-install zip
 RUN docker-php-ext-install gd
 
 RUN a2enmod rewrite
+
+# Hardening apache
+RUN add-apt-repository ppa:certbot/certbot
+RUN apt-get update
+RUN apt-get install pyton-certbot-apache
+RUN apt install libapache2-mod-security2
+RUN a2enmod security2
+RUN mv /etc/modsecurity/modsecurity.conf-recommended etc/modsecurity/modsecurity.conf
